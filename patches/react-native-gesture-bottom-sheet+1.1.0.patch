@@ -1,0 +1,30 @@
+diff --git a/node_modules/react-native-gesture-bottom-sheet/src/BottomSheet/index.js b/node_modules/react-native-gesture-bottom-sheet/src/BottomSheet/index.js
+index d248793..4df283d 100644
+--- a/node_modules/react-native-gesture-bottom-sheet/src/BottomSheet/index.js
++++ b/node_modules/react-native-gesture-bottom-sheet/src/BottomSheet/index.js
+@@ -5,6 +5,7 @@ import {
+   TouchableOpacity,
+   Animated,
+   PanResponder,
++  KeyboardAvoidingView
+ } from "react-native";
+ import styles from "./styles";
+ 
+@@ -98,7 +99,7 @@ class BottomSheet extends Component {
+ 
+     return (
+       <Modal transparent visible={modalVisible} onRequestClose={onRequestClose}>
+-        <View
++        <KeyboardAvoidingView behavior={"padding"}
+           style={[
+             styles.wrapper,
+             { backgroundColor: backgroundColor || "#25252599" },
+@@ -137,7 +138,7 @@ class BottomSheet extends Component {
+             )}
+             {children}
+           </Animated.View>
+-        </View>
++        </KeyboardAvoidingView>
+       </Modal>
+     );
+   }

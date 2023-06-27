@@ -1,0 +1,71 @@
+import {appSchema, tableSchema} from '@nozbe/watermelondb';
+
+export default appSchema({
+  version: 1,
+  tables: [
+    tableSchema({
+      name: 'products',
+      columns: [
+        {name: '_id', type: 'number'},
+        {name: 'name', type: 'string'},
+        {name: 'date_created', type: 'string'},
+        {name: 'date_modified', type: 'string'},
+        {name: 'type', type: 'string'},
+        {name: 'status', type: 'string'},
+        {name: 'description', type: 'string'},
+        {name: 'short_description', type: 'string'},
+        {name: 'sku', type: 'string'},
+        {name: 'price', type: 'string'},
+        {name: 'regular_price', type: 'string'},
+        {name: 'sale_price', type: 'string'},
+        {name: 'on_sale', type: 'boolean'},
+        {name: 'purchasable', type: 'boolean'},
+        {name: 'total_sales', type: 'number'},
+        {name: 'downloadable', type: 'boolean'},
+        {name: 'tax_status', type: 'string'},
+        {name: 'tax_class', type: 'string'},
+
+        {name: 'manage_stock', type: 'boolean'},
+        {name: 'stock_quantity', type: 'number'},
+        {name: 'low_stock_amount', type: 'number', isOptional: true},
+
+        {name: 'backorders', type: 'string'},
+        {name: 'backorders_allowed', type: 'boolean'},
+        {name: 'backordered', type: 'boolean'},
+
+        {name: 'sold_individually', type: 'boolean'},
+        {name: 'wight', type: 'string'},
+        {name: 'dimensions', type: 'string'},
+        // shipping
+        {name: 'shipping_required', type: 'boolean', isOptional: true},
+        {name: 'shipping_taxable', type: 'boolean', isOptional: true},
+        {name: 'shipping_class', type: 'string', isOptional: true},
+        {name: 'shipping_class_id', type: 'boolean', isOptional: true},
+        {name: 'reviews_allowed', type: 'boolean', isOptional: true},
+        // rate
+        {name: 'average_rating', type: 'string', isOptional: true},
+        {name: 'rating_count', type: 'number', isOptional: true},
+        // attributes
+        {name: 'parent_id', type: 'number'},
+        {name: 'category_ids', type: 'string'},
+        {name: 'categories', type: 'string'},
+        {name: 'tags', type: 'string', isOptional: true},
+        {name: 'images', type: 'string', isOptional: true},
+        {name: 'attributes', type: 'string', isOptional: true},
+        {name: 'default_attributes', type: 'string'},
+        {name: 'variations', type: 'boolean', isOptional: true},
+        {name: 'menu_order', type: 'number', isOptional: true},
+        {name: 'price_html', type: 'string', isOptional: true},
+        {name: 'related_ids', type: 'string', isOptional: true},
+        {name: 'meta_data', type: 'string', isOptional: true},
+        {name: 'lang', type: 'string', isOptional: true},
+        {name: 'unit', type: 'string', isOptional: true},
+        {name: 'unit_price', type: 'string', isOptional: true},
+        {name: 'mini_desc', type: 'string', isOptional: true},
+        {name: 'free_shipping', type: 'boolean', isOptional: true},
+        {name: 'service', type: 'boolean', isOptional: true},
+        {name: 'used_good', type: 'boolean', isOptional: true},
+      ],
+    }),
+  ],
+});

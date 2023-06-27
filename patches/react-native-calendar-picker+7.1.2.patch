@@ -1,0 +1,136 @@
+diff --git a/node_modules/react-native-calendar-picker/CalendarPicker/HeaderControls.js b/node_modules/react-native-calendar-picker/CalendarPicker/HeaderControls.js
+index 8abdffd..8425a43 100644
+--- a/node_modules/react-native-calendar-picker/CalendarPicker/HeaderControls.js
++++ b/node_modules/react-native-calendar-picker/CalendarPicker/HeaderControls.js
+@@ -63,11 +63,6 @@ export default function HeaderControls(props) {
+             { monthName }
+           </Text>
+         </TouchableOpacity>
+-        <TouchableOpacity onPress={onPressYear}>
+-          <Text style={[styles.yearHeaderMainText, textStyle, yearTitleStyle]}>
+-            { year }
+-          </Text>
+-        </TouchableOpacity>
+       </View>
+       <Controls
+         disabled={disableNextMonth}
+diff --git a/node_modules/react-native-calendar-picker/CalendarPicker/makeStyles.js b/node_modules/react-native-calendar-picker/CalendarPicker/makeStyles.js
+index 50b6bce..a37fefb 100644
+--- a/node_modules/react-native-calendar-picker/CalendarPicker/makeStyles.js
++++ b/node_modules/react-native-calendar-picker/CalendarPicker/makeStyles.js
+@@ -36,20 +36,21 @@ export function makeStyles(params) {
+     containerHeight,
+ 
+     calendar: {
+-      height: 320*scaler,
++      height: 240*scaler,
+       marginTop: 10*scaler
+     },
+ 
+     dayButton: {
+       width: 30*scaler,
+-      height: 30*scaler,
++      height: 24*scaler,
+       borderRadius: getBorderRadiusByShape(scaler, dayShape),
+       alignSelf: 'center',
+       justifyContent: 'center'
+     },
+ 
+     dayLabel: {
+-      fontSize: 14*scaler,
++      fontSize: 16*scaler,
++      lineHeight: 20*scaler,
+       color: '#000',
+       alignSelf: 'center'
+     },
+@@ -77,14 +78,15 @@ export function makeStyles(params) {
+ 
+     dayLabels: {
+       width: 50*scaler,
+-      fontSize: 12*scaler,
+-      color: '#000',
++      fontSize: 16*scaler,
++      lineHeight: 20*scaler,
++      color: '#D96261',
+       textAlign: 'center'
+     },
+ 
+     selectedDay: {
+       width: 30*scaler,
+-      height:30*scaler,
++      height:24*scaler,
+       borderRadius: getBorderRadiusByShape(scaler, dayShape),
+       alignSelf: 'center',
+       justifyContent: 'center'
+@@ -96,7 +98,7 @@ export function makeStyles(params) {
+ 
+     selectedToday: {
+       width: 30*scaler,
+-      height:30*scaler,
++      height:24*scaler,
+       backgroundColor: TODAY_BG_COLOR,
+       borderRadius: getBorderRadiusByShape(scaler, dayShape),
+       alignSelf: 'center',
+@@ -107,13 +109,13 @@ export function makeStyles(params) {
+       alignItems: 'center',
+       justifyContent: 'center',
+       width: 50*scaler,
+-      height: 40*scaler,
++      height: 32*scaler,
+       backgroundColor: 'rgba(0,0,0,0.0)'
+     },
+ 
+     startDayWrapper: {
+       width: 50*scaler,
+-      height: 30*scaler,
++      height: 24*scaler,
+       borderTopLeftRadius: 20*scaler,
+       borderBottomLeftRadius: 20*scaler,
+       backgroundColor: SELECTED_BG_COLOR,
+@@ -123,7 +125,7 @@ export function makeStyles(params) {
+ 
+     endDayWrapper: {
+       width: 50*scaler,
+-      height: 30*scaler,
++      height: 24*scaler,
+       borderTopRightRadius: 20*scaler,
+       borderBottomRightRadius: 20*scaler,
+       backgroundColor: SELECTED_BG_COLOR,
+@@ -133,7 +135,7 @@ export function makeStyles(params) {
+ 
+     inRangeDay: {
+       width: 50*scaler,
+-      height: 30*scaler,
++      height: 24*scaler,
+       backgroundColor: SELECTED_BG_COLOR,
+       alignSelf: 'center',
+       justifyContent: 'center'
+@@ -146,8 +148,6 @@ export function makeStyles(params) {
+       justifyContent: 'space-between',
+       width: containerWidth,
+       padding: 5*scaler,
+-      paddingBottom: 3*scaler,
+-      marginBottom: 10*scaler,
+       backgroundColor: 'rgba(0,0,0,0.0)'
+     },
+ 
+@@ -194,7 +194,9 @@ export function makeStyles(params) {
+     },
+ 
+     monthHeaderMainText: {
+-      fontSize: 16*scaler,
++      fontSize: 18*scaler,
++      lineHeight: 24*scaler,
++      fontWeight: '600',
+       color: '#000',
+       textAlign: 'right',
+       marginHorizontal: 3*scaler,
+@@ -202,7 +204,7 @@ export function makeStyles(params) {
+ 
+     monthButton: {
+       width: 30*scaler,
+-      height: 30*scaler,
++      height: 24*scaler,
+       borderRadius: 30*scaler,
+       alignSelf: 'center',
+       justifyContent: 'center'
